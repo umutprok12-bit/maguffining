@@ -1,23 +1,40 @@
 buildscript {
     repositories {
+        maven { url = 'https://maven.minecraftforge.net/' }
         mavenCentral()
-        maven { url = "https://maven.minecraftforge.net" }
     }
     dependencies {
-        classpath 'net.minecraftforge.gradle:ForgeGradle:2.3-SNAPSHOT'
+        classpath 'net.minecraftforge.gradle:ForgeGradle:3.+'
     }
 }
-apply plugin: 'net.minecraftforge.gradle.forge'
+apply plugin: 'net.minecraftforge.gradle'
 
-version = "1.0"
-group = "com.redguns"
-archivesBaseName = "redguns"
+version = '1.0'
+group = 'com.redguns'
+archivesBaseName = 'redguns'
 
-sourceCompatibility = targetCompatibility = '1.8'
+sourceCompatibility = targetCompatibility = compileJava.sourceCompatibility = compileJava.targetCompatibility = '1.8'
 compileJava.options.encoding = 'UTF-8'
 
 minecraft {
-    version = "1.12.2-14.23.5.2859"
-    runDir = "run"
-    mappings = "stable_39"
+    mappings channel: 'stable', version: '39-1.12'
+
+    runs {
+        client {
+            workingDirectory project.file('run')
+            property 'forge.logging.markers', 'SCAN,REGISTRIES,REGISTRYDUMP'
+            property 'forge.logging.console.level', 'debug'
+        }
+        server {
+            workingDirectory project.file('run')
+            property 'forge.logging.markers', 'SCAN,REGISTRIES,REGISTRYDUMP'
+            property 'forge.logging.console.level', 'debug'
+        }
+    }
 }
+
+dependencies {
+    minecraft 'net.minecraftforge:forge:1.12.2-14.23.5.2860'
+}
+
+jar.finalizedBy('reobfJar')
