@@ -1,0 +1,9 @@
+{
+  "forge_marker": 1,
+  "defaults": {
+    "model": "redguns:item/red_gun.obj"
+  },
+  "variants": {
+    "inventory": [{}]
+  }
+}

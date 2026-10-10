@@ -1,0 +1,11 @@
+newmtl GunMI
+Ka 1 1 1
+Kd 1 1 1
+d 1.0
+map_Kd redguns:items/gun_brown
+
+newmtl GunEnergy2MI
+Ka 1 1 1
+Kd 1 1 1
+d 1.0
+map_Kd redguns:items/energy_red

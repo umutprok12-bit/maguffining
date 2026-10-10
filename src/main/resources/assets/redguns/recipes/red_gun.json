@@ -1,0 +1,13 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "IIR",
+    "  W"
+  ],
+  "key": {
+    "I": { "item": "minecraft:iron_ingot" },
+    "R": { "item": "minecraft:redstone" },
+    "W": { "type": "forge:ore_dict", "ore": "plankWood" }
+  },
+  "result": { "item": "redguns:red_gun" }
+}

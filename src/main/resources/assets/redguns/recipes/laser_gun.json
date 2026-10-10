@@ -1,0 +1,10 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "ingredients": [
+    { "item": "redguns:red_gun" },
+    { "item": "minecraft:diamond" },
+    { "item": "minecraft:redstone_block" },
+    { "item": "minecraft:gold_ingot" }
+  ],
+  "result": { "item": "redguns:laser_gun" }
+}
