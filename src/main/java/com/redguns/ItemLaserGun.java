@@ -98,9 +98,9 @@ public class ItemLaserGun extends Item {
 
         // draw the beam; muzzle starts slightly in front and below the eyes
         WorldServer ws = (WorldServer) world;
-        Vec3d from = start.add(look.scale(0.9)).addVector(0.0, -0.15, 0.0);
+        Vec3d from = start.add(look.scale(0.9)).add(0.0, -0.15, 0.0);
         Vec3d dir = beamEnd.subtract(from);
-        double len = dir.lengthVector();
+        double len = dir.length();
         if (len > 0.1) {
             Vec3d step = dir.scale(1.0 / len);
             for (double d = 0.0; d < len; d += 0.3) {
